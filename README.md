@@ -1,3 +1,2 @@
-# Weathermap application
+# Weathermap application 🌞 ☁️ 🌧️
 
-🌞 ☁️ 🌧️
