@@ -1,9 +1,16 @@
 import './App.css';
+import { Card } from './Card';
+import { Input } from './Input';
 
 function App() {
   return (
     <div className="Main">
-      0
+      <Input />
+      <div className="CardList">
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   );
 }
