@@ -1,6 +1,5 @@
 import React from 'react';
 
-import '../App.css';
 
 export const Card = ({ city }) => (
   <div className="Card">

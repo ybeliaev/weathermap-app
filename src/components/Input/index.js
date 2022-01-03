@@ -1,16 +1,18 @@
 import React, { useState, useRef } from 'react';
 
-import '../App.css';
+
 
 export const Input = ({ setCitiesList }) => {
     const [inputValue, setInputValue] = useState('');
+    
+    // ref для фокуса на input после добавления города
     const inputRef = useRef(null);
 
     const handleOnClick = () => {
         if (inputValue.length) {
-            setCitiesList((currentArray) => [...currentArray, inputValue]);
-            setInputValue('');
-            inputRef.current.focus();
+          setCitiesList((currentArray) => [...currentArray, inputValue]);
+          setInputValue("");
+          inputRef.current.focus();
         }
     }
 
