@@ -4,10 +4,10 @@ import { Input } from './components/Input';
 import { useCitiesList } from './hooks/useCitiesList';
 
 function App() {
-  const [citiesList, setCitiesList] = useCitiesList()
+  const [citiesList, dispatch] = useCitiesList()
    return (
      <div className="Main">
-       <Input setCitiesList={setCitiesList} />
+       <Input dispatch={dispatch} />
        <CardList citiesList={citiesList} />
      </div>
    );

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 
 
 
-export const Input = ({ setCitiesList }) => {
+export const Input = ({ dispatch }) => {
     const [inputValue, setInputValue] = useState('');
     
     // ref для фокуса на input после добавления города
@@ -10,13 +10,20 @@ export const Input = ({ setCitiesList }) => {
 
     const handleOnClick = () => {
         if (inputValue.length) {
-          setCitiesList((currentArray) => [...currentArray, inputValue]);
+          dispatch({
+            type: 'ADD_CITY',
+            payload: inputValue, 
+          })
           setInputValue("");
           inputRef.current.focus();
         }
     }
 
     const handleOnChange = (event) => {
+        dispatch({
+            type: 'CHANGE_INPUT_VALUE',
+            payload: event.target.value, 
+          })
         setInputValue(event.target.value);
     }
 
