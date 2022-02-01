@@ -1,35 +1,39 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef, useContext} from 'react';
+import {GlobalContext} from "../../App";
 
 
+export const Input = () => {
+    // const [inputValue, setInputValue] = useState('');
+    const {state: {inputValue, editingCity}, dispatch} = useContext(GlobalContext)
 
-export const Input = ({ dispatch }) => {
-    const [inputValue, setInputValue] = useState('');
-    
     // ref для фокуса на input после добавления города
     const inputRef = useRef(null);
 
     const handleOnClick = () => {
         if (inputValue.length) {
-          dispatch({
-            type: 'ADD_CITY',
-            payload: inputValue, 
-          })
-          setInputValue("");
-          inputRef.current.focus();
+            dispatch({
+                type: 'ADD_CITY',
+                payload: inputValue,
+            })
+            dispatch({
+                type: 'RESET_INPUT_VALUE',
+                payload: ''
+            })
+            inputRef.current.focus();
         }
     }
 
     const handleOnChange = (event) => {
         dispatch({
             type: 'CHANGE_INPUT_VALUE',
-            payload: event.target.value, 
-          })
-        setInputValue(event.target.value);
+            payload: event.target.value,
+        })
+
     }
 
     return (
         <div className="InputWrap">
-            <input className="Input" onChange={handleOnChange} value={inputValue} ref={inputRef} />
+            <input className="Input" onChange={handleOnChange} value={inputValue} ref={inputRef}/>
             <button className="Button" onClick={handleOnClick}>+</button>
         </div>
     )

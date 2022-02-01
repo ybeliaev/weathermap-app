@@ -1,15 +1,21 @@
+import React from "react";
 import './App.css';
+
 import { CardList } from './components/CardList';
 import { Input } from './components/Input';
 import { useCitiesList } from './hooks/useCitiesList';
 
+export const GlobalContext = React.createContext()
+
 function App() {
-  const [citiesList, dispatch] = useCitiesList()
+  const [state, dispatch] = useCitiesList()
    return (
-     <div className="Main">
-       <Input dispatch={dispatch} />
-       <CardList citiesList={citiesList} />
-     </div>
+       <GlobalContext.Provider value={{state, dispatch}}>
+         <div className="Main">
+           <Input  />
+           <CardList  />
+         </div>
+       </GlobalContext.Provider>
    );
 }
 
