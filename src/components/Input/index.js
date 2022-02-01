@@ -30,6 +30,18 @@ export const Input = () => {
         })
 
     }
+    const handleDone = () => {
+        if (inputValue.length) {
+            dispatch({
+                type: 'EDIT_CITY_DONE',
+                payload: inputValue
+            })
+            dispatch({
+                type: 'RESET_INPUT_VALUE',
+            })
+            inputRef.current.focus()
+        }
+    }
 
     return (
         <div className="InputWrap">
