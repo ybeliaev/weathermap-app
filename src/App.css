@@ -15,7 +15,7 @@
 
 .InputWrap {
   display: flex;
-  width: 80%;
+  width: 100%;
   height: 50px;
   border-radius: 12px;
   margin-bottom: 24px;
@@ -63,20 +63,13 @@
   justify-content: center;
 }
 .Select{
-  position: relative;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #0010F33F;
-  outline: none;
+  background-color: rgba(255,255,255,0.7);
+  width: 100%;
+  margin: 12px;
+  padding: 5px 8px;
+  border: 1px solid #0374c0;
+  border-radius: 12px;
   height: 3rem;
-  line-height: 3rem;
-  font-size: 16px;
-  margin: 0 0 8px 0;
-  padding: 0;
-  display: block;
-  width: 80%;
-  user-select: none;
 }
 
 .Card {
