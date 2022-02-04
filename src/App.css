@@ -62,6 +62,22 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.Select{
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #0010F33F;
+  outline: none;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  padding: 0;
+  display: block;
+  width: 80%;
+  user-select: none;
+}
 
 .Card {
   width: 200px;
