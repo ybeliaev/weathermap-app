@@ -1,5 +1,5 @@
 import React, {useRef, useContext} from 'react';
-import {GlobalContext} from "../../App";
+import {GlobalContext} from "../App";
 
 
 export const Input = () => {

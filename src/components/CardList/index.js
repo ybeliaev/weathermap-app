@@ -1,6 +1,6 @@
 import {Card} from '../Card'
 import {useContext} from "react";
-import {GlobalContext} from "../../App";
+import {GlobalContext} from "../App";
 
 export const CardList = () => {
     const {state: {citiesList}} = useContext(GlobalContext);

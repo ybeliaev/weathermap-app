@@ -1,6 +1,6 @@
 import React, {memo, useContext} from 'react';
 import {useWeather} from '../../hooks/useWeather';
-import {GlobalContext} from "../../App";
+import {GlobalContext} from "../App";
 
 
 export const Card = memo(({city}) => {

@@ -1,9 +1,9 @@
 import React from "react";
-import './App.css';
+import '../App.css';
 
-import { CardList } from './components/CardList';
-import { Input } from './components/Input';
-import { useCitiesList } from './hooks/useCitiesList';
+import { CardList } from './CardList';
+import { Input } from './Input';
+import { useCitiesList } from '../hooks/useCitiesList';
 
 export const GlobalContext = React.createContext()
 
