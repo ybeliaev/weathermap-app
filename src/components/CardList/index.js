@@ -1,17 +1,17 @@
 import {Card} from '../Card'
-import {useContext, useState} from "react";
-import {GlobalContext} from "../App";
+import {useState} from "react";
 
-export const CardList = () => {
-    const {state: {citiesList}} = useContext(GlobalContext);
+import {withGlobalState} from "../../hocs/withGlobalState";
+
+const CardListNoState = ({state}) => {
     const [orderBy, setOrderBy] = useState('asc')
 
     const handleOnChangeSelect = (e) => {
         setOrderBy(e.target.value)
     }
 
-    let sortedCitiesList = citiesList.sort()
-    if(orderBy === 'desc'){
+    let sortedCitiesList = state.citiesList.sort()
+    if (orderBy === 'desc') {
         sortedCitiesList.reverse()
     }
     return (
@@ -28,3 +28,4 @@ export const CardList = () => {
         </>
     )
 }
+export const CardList = withGlobalState(CardListNoState);
